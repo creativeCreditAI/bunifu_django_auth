@@ -1,7 +1,5 @@
-# The path can changes accordingly yo how yu set them
-
 ### Register a new user
-POST http://localhost:8000/register/ 
+POSThttp://example.com/auth/register/ 
 Content-Type: application/json
 
 {
@@ -10,7 +8,7 @@ Content-Type: application/json
 }
 
 ### Login with the user to get access and refresh tokens
-POST http://localhost:8000/login/
+POSThttp://example.com/auth/login/
 Content-Type: application/json
 
 {
@@ -19,7 +17,7 @@ Content-Type: application/json
 }
 
 ### Refresh the access token
-POST http://localhost:8000/refresh/
+POSThttp://example.com/auth/refresh/
 Content-Type: application/json
 
 {
@@ -27,7 +25,7 @@ Content-Type: application/json
 }
 
 ### Logout (invalidate refresh token)
-POST http://localhost:8000/logout/
+POSThttp://example.com/auth/logout/
 Content-Type: application/json
 
 {

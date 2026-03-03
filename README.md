@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "rest_framework",
+    "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
     "bunifu_django_auth",
 ]
@@ -56,6 +57,16 @@ from django.urls import path, include
 urlpatterns = [
     path("auth/", include("bunifu_django_auth.urls")),
 ]
+```
+
+### Include the JWTAuthorization
+
+```python
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    )
+}
 ```
 
 That’s it.

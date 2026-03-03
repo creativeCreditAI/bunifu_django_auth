@@ -42,11 +42,12 @@ dev = [
     "pytest-django>=4.12.0",
 ]
 [project.urls]
-Homepage = "https://github.com/yourusername/bunifu_django_auth"
-Repository = "https://github.com/yourusername/bunifu_django_auth"
+Homepage = "https://github.com/creativeCreditAI/bunifu_django_auth"
+Repository = "https://github.com/creativeCreditAI/bunifu_django_auth"
 
 [tool.setuptools.packages.find]
-exclude = ["tests*", "src/test*"]
+exclude = ["src/test*"]
 
 [tool.setuptools.include-package-data]
 include-package-data = true
+
