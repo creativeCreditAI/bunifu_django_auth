@@ -9,6 +9,7 @@ class BunifuDjangoAuthConfig(AppConfig):
 
     def ready(self):
         self.apply_default_settings()
+        from . import models  # noqa: F401
 
     def apply_default_settings(self):
         """
@@ -67,15 +68,3 @@ class BunifuDjangoAuthConfig(AppConfig):
 
         settings.REST_FRAMEWORK = rf_settings
 
-    # ----------------------------
-    # ALLAUTH SETTINGS (modern)
-    # ----------------------------
-    if not hasattr(settings, "ACCOUNT_LOGIN_METHODS"):
-        settings.ACCOUNT_LOGIN_METHODS = {"email"}
-
-    if not hasattr(settings, "ACCOUNT_SIGNUP_FIELDS"):
-        settings.ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
-
-    # MIDDLEWARE
-    if "allauth.account.middleware.AccountMiddleware" not in settings.MIDDLEWARE:
-        settings.MIDDLEWARE += ["allauth.account.middleware.AccountMiddleware"]

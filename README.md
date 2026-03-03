@@ -57,6 +57,15 @@ from django.urls import path, include
 urlpatterns = [
     path("auth/", include("bunifu_django_auth.urls")),
 ]
+
+```
+
+### Migrate the tables
+
+```python
+python manage.py makemigrations bunifu_django_auth
+python manage.py makemigrations account
+python manage.py migrate
 ```
 
 ### Include the JWTAuthorization
