@@ -42,7 +42,7 @@ pip install bunifu-django-auth
 
 ## Quick Start
 
-### 1️⃣ Add to Installed Apps
+### Add to Installed Apps
 
 ```python
 INSTALLED_APPS = [
@@ -61,13 +61,15 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL="bunifu_django_auth.User"
 ```
 
-### 2️⃣ Include URLs
+### Include URLs
 
 ```python
 from django.urls import path, include
 
 urlpatterns = [
     path("auth/", include("bunifu_django_auth.urls")),
+    # add allauth urls for the allauth paths
+    path("accounts/", include("allauth.urls")),
 ]
 
 ```
@@ -75,8 +77,6 @@ urlpatterns = [
 ### Migrate the tables
 
 ```python
-python manage.py makemigrations bunifu_django_auth
-python manage.py makemigrations account
 python manage.py migrate
 ```
 
@@ -89,6 +89,17 @@ REST_FRAMEWORK = {
     )
 }
 ```
+
+Ensure the allauth middleware is added as below
+
+```python
+MIDDLEWARE = [
+    ...
+    # add this
+    "allauth.account.middleware.AccountMiddleware"
+]
+```
+
 
 That’s it.
 
