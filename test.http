@@ -27,6 +27,7 @@ Content-Type: application/json
 ### Logout (invalidate refresh token)
 POSThttp://example.com/auth/logout/
 Content-Type: application/json
+Authorization: Bearer PUT_ACCESS_TOKEN_HERE
 
 {
   "refresh": "PUT_REFRESH_TOKEN_HERE"
