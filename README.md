@@ -26,6 +26,12 @@ Designed for internal organizational consistency and centralized user model mana
 
 ## Installation
 
+### TestPypi Repository
+
+```bash
+uv pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple  bunifu-django-auth       
+```
+
 ```bash
 pip install bunifu-django-auth
 or
