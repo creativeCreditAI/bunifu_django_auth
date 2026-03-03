@@ -12,6 +12,7 @@ class User(AbstractUser):
     This will allow for the consistency of the user table and wont 
     break between different django applications
     """
+    username = None
     email = models.EmailField(unique=True)
 
     USERNAME_FIELD = "email"
