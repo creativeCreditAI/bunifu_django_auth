@@ -49,6 +49,12 @@ INSTALLED_APPS = [
 ]
 ```
 
+### Register auth user model
+
+```python
+AUTH_USER_MODEL="bunifu_django_auth.User"
+```
+
 ### 2️⃣ Include URLs
 
 ```python
