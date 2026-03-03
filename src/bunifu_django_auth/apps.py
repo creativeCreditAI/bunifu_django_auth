@@ -67,17 +67,15 @@ class BunifuDjangoAuthConfig(AppConfig):
 
         settings.REST_FRAMEWORK = rf_settings
 
-        # ----------------------------
-        # ALLAUTH SETTINGS
-        # ----------------------------
-        if not hasattr(settings, "ACCOUNT_AUTHENTICATION_METHOD"):
-            settings.ACCOUNT_AUTHENTICATION_METHOD = "email"
+    # ----------------------------
+    # ALLAUTH SETTINGS (modern)
+    # ----------------------------
+    if not hasattr(settings, "ACCOUNT_LOGIN_METHODS"):
+        settings.ACCOUNT_LOGIN_METHODS = {"email"}
 
-        if not hasattr(settings, "ACCOUNT_EMAIL_REQUIRED"):
-            settings.ACCOUNT_EMAIL_REQUIRED = True
+    if not hasattr(settings, "ACCOUNT_SIGNUP_FIELDS"):
+        settings.ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
 
-        if not hasattr(settings, "ACCOUNT_USERNAME_REQUIRED"):
-            settings.ACCOUNT_USERNAME_REQUIRED = False
     # MIDDLEWARE
     if "allauth.account.middleware.AccountMiddleware" not in settings.MIDDLEWARE:
         settings.MIDDLEWARE += ["allauth.account.middleware.AccountMiddleware"]
