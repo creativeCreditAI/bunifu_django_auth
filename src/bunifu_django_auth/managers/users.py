@@ -4,12 +4,13 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import UserManager as DjangoUserManager
 
 if TYPE_CHECKING:
-    from src.bunifu_django_auth.models.users import User  # noqa: F401
+    from src.bunifu_django_auth.models.users import AbstractBunifuUser  # noqa: F401
 
 
 
-class UserManager(DjangoUserManager["User"]):
+class UserManager(DjangoUserManager["AbstractBunifuUser"]):
     """Custom manager for the User model."""
+    use_in_migrations = True
 
     def _create_user(self, email: str, password: str | None, **extra_fields):
         """
@@ -41,3 +42,4 @@ class UserManager(DjangoUserManager["User"]):
             raise ValueError(msg)
 
         return self._create_user(email, password, **extra_fields)
+

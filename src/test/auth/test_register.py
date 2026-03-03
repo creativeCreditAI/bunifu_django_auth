@@ -12,6 +12,6 @@ def test_user_account_creation():
     )
 
     assert response.status_code == 201
-    from bunifu_django_auth.models.users import User
-    assert User.objects.filter(email="jeckonia@gmail.com").exists()
+    from bunifu_django_auth.models.users import BunifuUser
+    assert BunifuUser.objects.filter(email="jeckonia@gmail.com").exists()
 

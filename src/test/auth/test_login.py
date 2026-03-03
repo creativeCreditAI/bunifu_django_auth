@@ -14,6 +14,4 @@ def test_user_account_login():
         {"email": user.email, "password": raw_password},
         format="json",
     )
-    
-    print(response.content)
     assert response.status_code == 200

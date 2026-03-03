@@ -1,4 +1,5 @@
-from .users import User
+from .users import BunifuUser
+from .base import BunifuAbstractUser
 
-__all__ = ["User"]
+__all__ = ["BunifuUser", "BunifuAbstractUser"]
 
