@@ -28,9 +28,15 @@ Designed for internal organizational consistency and centralized user model mana
 
 ### TestPypi Repository
 
+using [uv](https://docs.astral.sh/uv/) or [pip](https://pypi.org/project/bunifu-django-auth/)
+
 ```bash
-uv pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple  bunifu-django-auth       
+uv add bunifu-django-auth
+---------------------
+pip install bunifu-django-auth 
 ```
+
+
 
 ---
 
