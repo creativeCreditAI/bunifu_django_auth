@@ -1,0 +1,2 @@
+scripts:
+  upload-testpypi: twine upload --repository testpypi dist/*
