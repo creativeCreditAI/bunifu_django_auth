@@ -1,6 +1,6 @@
 [project]
 name = "bunifu-django-auth"
-version = "0.2.7"
+version = "0.2.8"
 description = "Internal authentication package using Django Allauth, DRF and SimpleJWT"
 authors = [{ name = "Bunifu Capital" }]
 readme = "README.md"
