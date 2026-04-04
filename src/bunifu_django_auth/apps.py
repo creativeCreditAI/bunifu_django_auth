@@ -9,7 +9,8 @@ class BunifuDjangoAuthConfig(AppConfig):
 
     def ready(self):
         self.apply_default_settings()
-        from . import models  # noqa: F401
+        import bunifu_django_auth.models.users
+        import bunifu_django_auth.models.base  # noqa: F401
 
     def apply_default_settings(self):
         """
