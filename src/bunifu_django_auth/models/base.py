@@ -5,7 +5,7 @@ from ..managers.users import UserManager
 class BunifuAbstractUser(AbstractUser):
     """
     This a s abstract user model so the user can decide
-    to exitent the django model with it
+    to existent the django model with it
     """
     username = None
     email = models.EmailField(unique=True)
