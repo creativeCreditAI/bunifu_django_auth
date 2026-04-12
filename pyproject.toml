@@ -1,6 +1,6 @@
 [project]
 name = "bunifu-django-auth"
-version = "0.3.1"
+version = "0.3.0"
 description = "Internal authentication package using Django Allauth, DRF and SimpleJWT"
 authors = [{ name = "Bunifu Capital" }]
 readme = "README.md"
@@ -39,6 +39,5 @@ dev = [
 [project.urls]
 Homepage = "https://github.com/creativeCreditAI/bunifu_django_auth"
 Repository = "https://github.com/creativeCreditAI/bunifu_django_auth"
-
 
 
