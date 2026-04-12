@@ -74,12 +74,6 @@ urlpatterns = [
 
 ```
 
-### Migrate the tables
-
-```python
-python manage.py migrate
-```
-
 ### Include the JWTAuthorization
 
 ```python
@@ -98,6 +92,12 @@ MIDDLEWARE = [
     # add this
     "allauth.account.middleware.AccountMiddleware"
 ]
+```
+
+### Migrate the tables
+
+```python
+python manage.py migrate
 ```
 
 
@@ -137,6 +137,27 @@ Example:
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
 }
+```
+
+
+
+
+---
+
+## Overriding custom user model abstract
+
+```python
+from django.db import models
+from bunifu_django_auth.models import BunifuAbstractUser
+
+class CustomUser(BunifuAbstractUser):
+    user_stats = models.JSONField(default=list)
+```
+
+Then in the settings
+
+```python
+AUTH_USER_MODEL = "your_app.CustomUser"
 ```
 
 ---
