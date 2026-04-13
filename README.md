@@ -26,8 +26,6 @@ Designed for internal organizational consistency and centralized user model mana
 
 ## Installation
 
-### TestPypi Repository
-
 using [uv](https://docs.astral.sh/uv/) or [pip](https://pypi.org/project/bunifu-django-auth/)
 
 ```bash
@@ -139,12 +137,12 @@ SIMPLE_JWT = {
 }
 ```
 
-
-
-
 ---
 
 ## Overriding custom user model abstract
+
+If by any chance you want to update your user model
+You can simply inherit from the [BunifuAbstractUser](https://github.com/creativeCreditAI/bunifu_django_auth/blob/master/src/bunifu_django_auth/models/base.py) as shown below
 
 ```python
 from django.db import models
