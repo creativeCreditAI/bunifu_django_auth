@@ -16,3 +16,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 
+class RegisterResponseSerializer(serializers.Serializer):
+    detail = serializers.CharField()
+    user_id = serializers.CharField()

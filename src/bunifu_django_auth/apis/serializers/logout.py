@@ -15,3 +15,7 @@ class LogoutSerializer(serializers.Serializer):
             token.blacklist()
         except Exception:
             raise serializers.ValidationError("Invalid or expired token.")
+
+class LogoutResponseSerializer(serializers.Serializer):
+    detail = serializers.CharField()
+
